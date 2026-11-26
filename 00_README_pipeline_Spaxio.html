@@ -498,7 +498,7 @@ main path.</em></p>
 open the <code>.cloupe</code>, look at the H&amp;E under the bins, read
 the Space Ranger clusters, colour by marker genes (<em>Pf4</em>,
 <em>Hba-a1</em>, <em>Mpo</em>, <em>Cd79a</em>, <em>Hoxa9</em>,
-<em>Meis1</em>, <em>Sparc</em>), then <strong>draw your region</strong>
+<em>Meis1</em>, <em>Sparc</em>), t hen <strong>draw your region</strong>
 with the lasso and export it as <code>loupe_roi_8um.csv</code>.</p>
 <p><strong>Region size: aim for 250–600 µm across.</strong> Smaller →
 the H&amp;E is too small for StarDist’s 1024-pixel blocks and
@@ -530,25 +530,26 @@ Rutils folder This step is skipped by default. In this workshop,
 segmentation is performed on a small region rather than the whole slide,
 so further subsetting to the central bone marrow region is unnecessary
 and adds processing time.</p>
-</div>
-</div>
-<div id="this-step-is-only-relevant-if-you-are-starting-with-a-whole-slide-anndata-object-and-want-to-restrict-the-single-cell-analysis-and-annotation-to-a-specific-region-of-interestfor-example-the-central-bone-marrow-excluding-surrounding-tissues-such-as-muscle." class="section level2">
-<h2>This step is only relevant if you are starting with a whole-slide
+<p>This step is only relevant if you are starting with a whole-slide
 AnnData object and want to restrict the single cell analysis and
 annotation to a specific region of interest—for example, the central
-bone marrow, excluding surrounding tissues such as muscle.</h2>
+bone marrow, excluding surrounding tissues such as muscle.</p>
+<hr />
+</div>
 </div>
 <div id="step-01a-annotation-cells-cell-types" class="section level2">
 <h2>Step 01a — Annotation (cells → cell types)</h2>
 <ol style="list-style-type: decimal">
-<li>Launch RStudio IFB with R 4.4.1.</li>
-<li>Open <code>training-spaxio-visium-hd.Rproj</code></li>
+<li>Launch RStudio IFB with <strong>R 4.4.1</strong> (the shared R
+library was built with this version, another version will not
+work).</li>
+<li>Open <code>training-spaxio.Rproj</code> from your own copy of the
+repository.</li>
+<li>Check that the shared library is used. Run in the console:</li>
 </ol>
-<p>Run in console:</p>
-<pre class="r"><code>renv::restore()</code></pre>
-<p>Answer y then wait and check:</p>
-<pre class="r"><code>renv::status()
+<pre class="r"><code>.libPaths()   # the first path must end with inputs/Rlib_spaxio_R4.4.1
 library(Seurat)</code></pre>
+<p>All R packages are installed in a shared library.</p>
 <p><strong>File:</strong> <code>01_Annotation_visu.Rmd</code> · R,
 Seurat</p>
 <ul>
